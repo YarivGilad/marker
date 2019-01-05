@@ -1,6 +1,9 @@
 [![marker](https://img.shields.io/npm/v/@ajar/marker.svg)](https://www.npmjs.com/package/@ajar/marker)
 [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
 
+
+[![Marker](https://github.com/Ajar-Ajar/marker/blob/master/marker.png)](https://www.npmjs.com/package/@ajar/marker)
+
 # Marker 
 Colored logs in your terminal, and much more
 
@@ -27,7 +30,7 @@ const log = require('@ajar/marker');
 import log from '@ajar/marker'; 
 ```
 
-## Simple usage
+## Usage
 ```javascript
 log.info('hello','marker'); 
 ```
@@ -95,4 +98,4 @@ try{
 ```
 
 ## Example output
-<img src="https://camo.githubusercontent.com/3edba55bb13ca6814c268bb26d9d708d1a9bc137/68747470733a2f2f6769746c61622e636f6d2f5f416a61725f2f6d61726b65722f7261772f6d61737465722f73637265657473686f742e706e67" width="800" >
+[![Example output](https://github.com/Ajar-Ajar/marker/blob/master/screetshot.png)](https://www.npmjs.com/package/@ajar/marker)
