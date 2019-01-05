@@ -55,3 +55,43 @@ describe('negative alias tests', () => {
         expect(out).not.toEqual(output);
     })
 })
+describe('.obj() method tests', () => {
+    test(".obj('some string') throws", () => {
+        expect(()=> log.obj('i am no object')).toThrow();
+    })
+    test(".obj(222) throws", () => {
+        expect(()=> log.obj(222)).toThrow();
+    })
+    test(".obj() without args throws", () => {
+        expect(()=> log.obj()).toThrow();
+    })
+    test(".obj(null) throws", () => {
+        expect(()=> log.obj(null)).toThrow();
+    })
+    test(".obj(true) throws", () => {
+        expect(()=> log.obj(true)).toThrow();
+    })
+    test(".obj(undefined) throws", () => {
+        expect(()=> log.obj(undefined)).toThrow();
+    })
+})
+describe('.error() method tests', () => {
+    test(".error('some string') throws", () => {
+        expect(()=> log.error('i am not an Error')).toThrow();
+    })
+    test(".error(222) throws", () => {
+        expect(()=> log.error(222)).toThrow();
+    })
+    test(".error() without args throws", () => {
+        expect(()=> log.error()).toThrow();
+    })
+    test(".error(null) throws", () => {
+        expect(()=> log.error(null)).toThrow();
+    })
+    test(".error(true) throws", () => {
+        expect(()=> log.error(true)).toThrow();
+    })
+    test(".error(undefined) throws", () => {
+        expect(()=> log.error(undefined)).toThrow();
+    })
+})

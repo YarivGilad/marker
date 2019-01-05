@@ -76,8 +76,9 @@ const marker = {
             if(Object(obj) !== obj){//verify value is an object
                 throw new Error('.obj() expects at least 1 object argument');
             }
-            log(Magenta)(label);
+            const actual_label = log(Magenta)(label);
             console.dir(obj);
+            return {actual_label}
     },
     /**
      * @param { Error } err - an Error object to log
@@ -86,7 +87,7 @@ const marker = {
             if(toString.call(err) !== '[object Error]'){
                 throw new Error('.err() expects 1 Error argument');
             }
-            log(Red)('ERROR: ',err.message)
+            const msg = log(Red)('ERROR: ',err.message)
             let odd = true;
             let stack = err.stack? err.stack.split('\n') : [];
             //exclude stack traces from node internals or node_modules
@@ -100,6 +101,7 @@ const marker = {
                 //alternating row colors
                 odd? log(NoColor)(line)  : log(Blue)(line) 
             }
+            return {msg,stack}
     }    
 }
 module.exports = marker;

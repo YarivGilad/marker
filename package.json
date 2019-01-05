@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "nodemon src/marker.draft.js",
     "start": "node src/marker.draft.js",
-    "test": "jest src/*.spec.js",
-    "test:watch": "npm test -- --watch"
+    "test": "jest ./src/index.spec.js",
+    "test:watch": "npm test -- --watch",
+    "test:coverage": "npm test -- --coverage"
   },
   "keywords": [
     "colors",
