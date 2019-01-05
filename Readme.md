@@ -19,18 +19,20 @@ npm i @ajar/marker
 
 ## CommonJS
 ```javascript
-const log = require('@ajar/marker');
-
-log.info('hello','marker'); 
+const log = require('@ajar/marker'); 
 ```
 
 ## ES6 modules
 ```javascript
-import log from '@ajar/marker';
+import log from '@ajar/marker'; 
+```
 
+## Simple usage
+```javascript
 log.info('hello','marker'); 
 ```
-## Demo usage
+
+## Examples
 ```javascript
 //by levels shorthand
 
@@ -92,5 +94,5 @@ try{
 }
 ```
 
-## Demo output
+## Example output
 <img src="https://camo.githubusercontent.com/3edba55bb13ca6814c268bb26d9d708d1a9bc137/68747470733a2f2f6769746c61622e636f6d2f5f416a61725f2f6d61726b65722f7261772f6d61737465722f73637265657473686f742e706e67" width="800" >
