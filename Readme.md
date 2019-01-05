@@ -93,10 +93,4 @@ try{
 ```
 
 ## Demo output
-<img src="https://gitlab.com/_Ajar_/marker/raw/master/screetshot.png" width="700" >
-<!-- [![marker demo usage](https://gitlab.com/_Ajar_/marker/raw/master/screetshot.png)(https://www.npmjs.com/package/@ajar/marker) -->
-
-
-<!-- https://img.shields.io/badge/marker-1.0.0-brightgreen.svg -->
-
-<!-- [![DatePicker](https://img.shields.io/badge/Date_Picker-1.0.0-brightgreen.svg)]() -->
+<img src="https://camo.githubusercontent.com/3edba55bb13ca6814c268bb26d9d708d1a9bc137/68747470733a2f2f6769746c61622e636f6d2f5f416a61725f2f6d61726b65722f7261772f6d61737465722f73637265657473686f742e706e67" width="800" >
