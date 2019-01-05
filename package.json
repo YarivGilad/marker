@@ -1,0 +1,48 @@
+{
+  "name": "@ajar/marker",
+  "version": "1.0.4",
+  "description": "Colored logs in your terminal, and much more",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "watch 'npm run draft' src",
+    "build": "rimraf dist && babel src -d dist",
+    "draft": "npm run build && node dist/marker.draft.js",
+    "test": "jest src/*.spec.js",
+    "test:watch": "npm test -- --watch"
+  },
+  "keywords": [
+    "colors",
+    "color",
+    "cli",
+    "terminal",
+    "logger",
+    "log",
+    "logs",
+    "trace",
+    "marker",
+    "chalk",
+    "cli-color",
+    "color-logger"
+  ],
+  "author": "Ajar <yariv.gilad@gmail.com>",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
+    "jest": "^23.6.0",
+    "rimraf": "^2.6.2",
+    "watch": "^1.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/_Ajar_/marker.git"
+  },
+  "bugs": {
+    "url": "https://gitlab.com/_Ajar_/marker/issues"
+  },
+  "homepage": "https://gitlab.com/_Ajar_/marker#readme"
+}

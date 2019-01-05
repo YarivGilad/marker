@@ -1,0 +1,10 @@
+.vscode
+node_modules
+npm-debug.log
+yarn-error.log
+*.hot-update.js
+*.hot-update.js.map
+*.hot-update.json
+*.tgz
+TODO
+coverage
