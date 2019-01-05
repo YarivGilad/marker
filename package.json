@@ -1,6 +1,6 @@
 {
   "name": "@ajar/marker",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Colored logs in your terminal, and much more",
   "main": "dist/index.js",
   "scripts": {
