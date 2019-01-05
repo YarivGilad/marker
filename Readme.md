@@ -98,4 +98,4 @@ try{
 ```
 
 ## Example output
-[![Example output](https://github.com/Ajar-Ajar/marker/blob/master/screetshot.png)](https://www.npmjs.com/package/@ajar/marker)
+<img src="https://github.com/Ajar-Ajar/marker/blob/master/screetshot.png" width="800" alt="Example output">
