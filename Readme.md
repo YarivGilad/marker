@@ -2,10 +2,10 @@
 [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
 
 
-[![Marker](https://github.com/Ajar-Ajar/marker/blob/master/marker.png)](https://www.npmjs.com/package/@ajar/marker)
-
 # Marker 
-Colored logs in your terminal, and much more
+A simple color logging utility for your node.js console.
+
+[![Marker](https://raw.githubusercontent.com/Ajar-Ajar/marker/master/marker.png)](https://www.npmjs.com/package/@ajar/marker)
 
 ## installation
 ```
@@ -98,4 +98,4 @@ try{
 ```
 
 ## Example output
-<img src="https://github.com/Ajar-Ajar/marker/blob/master/screetshot.png" width="800" alt="Example output">
+<img src="https://raw.githubusercontent.com/Ajar-Ajar/marker/master/screetshot.png" width="800" alt="Example output">
