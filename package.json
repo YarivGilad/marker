@@ -39,10 +39,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/_Ajar_/marker.git"
+    "url": "git+https://github.com/Ajar-Ajar/marker.git"
   },
   "bugs": {
-    "url": "https://gitlab.com/_Ajar_/marker/issues"
+    "url": "https://github.com/Ajar-Ajar/marker/issues"
   },
-  "homepage": "https://gitlab.com/_Ajar_/marker#readme"
+  "homepage": "https://github.com/Ajar-Ajar/marker#readme"
 }
