@@ -36,7 +36,7 @@ function get_filename(){
 const log = color => (...args)=>  {
     const hide = args[0] === Hidden || args.length === 0;
     const colored_msg = hide ? args.splice(0,2)[1] : args.shift() ;
-    let text = [`${Bold}${color}${get_filename()}${Reset}: ${color}${colored_msg}${Reset}`, ...args].join(' ');
+    let text = [`${color}${get_filename()}${Reset}: ${Bold}${color}${colored_msg}${Reset}`, ...args].join(' ');
     if(!hide){
         console.log(text);
     }
@@ -85,7 +85,7 @@ const marker = {
      */
     error: (err)=> {
             if(toString.call(err) !== '[object Error]'){
-                throw new Error('.err() expects 1 Error argument');
+                throw new Error('.error() expects 1 Error argument');
             }
             const msg = log(Red)('ERROR: ',err.message)
             let odd = true;
