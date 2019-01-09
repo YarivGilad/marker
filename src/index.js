@@ -23,7 +23,8 @@ function get_filename(){
     } catch (e) {
         const lines = e.stack.split('\n');
         let line = lines[4];
-        if(line.includes('internal/modules/cjs')) line = lines[3];
+        if(!line || (line && line.includes('internal/modules/cjs'))) line = lines[3];
+        if(!line) return '>>';
         const [info] = line.match(/([\w\d\-_.]*:\d+:\d+)/);
         const [file , line_num] = info.split(':');
          return `${file}[${line_num}]`
