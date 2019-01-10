@@ -23,9 +23,11 @@ function get_filename(){
     } catch (e) {
         const lines = e.stack.split('\n');
         let line = lines[4];
-        if(!line || (line && line.includes('internal/modules/cjs'))) line = lines[3];
+        if(!line || (line && line.includes('internal/modules/cjs')) || (line.includes('<anonymous>'))) line = lines[3];
         if(!line) return '>>';
-        const [info] = line.match(/([\w\d\-_.]*:\d+:\d+)/);
+        const res = line.match(/([\w\d\-_.]*:\d+:\d+)/);
+        if(!res) return '>>';
+        const [info] = res;
         const [file , line_num] = info.split(':');
          return `${file}[${line_num}]`
     }
