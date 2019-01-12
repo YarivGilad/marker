@@ -1,6 +1,7 @@
-[![marker](https://badgen.net/npm/dt/@ajar/marker)](https://www.npmjs.com/package/@ajar/marker)
 [![marker](https://badgen.net/npm/v/@ajar/marker)](https://www.npmjs.com/package/@ajar/marker)
+[![marker](https://badgen.net/npm/dt/@ajar/marker)](https://www.npmjs.com/package/@ajar/marker)
 [![jest](https://jestjs.io/img/jest-badge.svg)](https://github.com/facebook/jest)
+[![jest](https://img.shields.io/bundlephobia/min/@ajar/marker.svg)](https://www.npmjs.com/package/@ajar/marker)
 
 
 # Marker 
