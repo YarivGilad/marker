@@ -1,5 +1,4 @@
 const marker = require('./index');
-const fetch = require('isomorphic-fetch');
 
 //by levels shorthand
 console.log('\n\nby levels shorthand\n')
@@ -54,33 +53,6 @@ try{
     console.log('\n\n')
 }
 
-async function getRate(base,currency) {
-	try {
-
-		const key = '36da8ac5af2456ef28de8ca6616b9c9c';
-		const url = `http://data.fixer.io/api/latest?access_key=${key}&base=${base}&symbols=${currency}`
-
-		const res = await fetch(url);
-		const json = await res.json();
-
-		if(json.rates[currency]) return json.rates[currency];
-		else throw new Error('currency: '+currency+' doesn\'t exist in results.');
-
-	} catch(error) {
-		marker.error(error);
-	}
-};
-
-async function main() {
-    try {
-          const base = 'EUR';
-          const currencies = ['AUD','ILS','GBP','NZD','CAD','JPY','INR','PLN','SEK','HUF','MXN']
-          let rates = await Promise.all(currencies.map( currency => getRate(base,currency) ))
-        //   marker.cyan(`1 ${base} = `,`${rates[0]} ${currencies[0]} `);
-        //   rates.forEach((rate,i)=> console.log(marker.cyan.call(null,'i')));//`1 ${base} = `,`${rate} ${currencies[i]} `))
-          rates.forEach((rate,i)=> marker.cyan(`1 ${base} = `,`${rate} ${currencies[i]} `))
-    } catch(error) {
-          marker.error(error);
-    }
-  }
-main()
+//works with anonymus functions as well
+['a','b','c'].forEach((char,i)=> marker.cyan(`index: ${i}`,`value: ${char}`))
+  
