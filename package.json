@@ -43,6 +43,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "isomorphic-fetch": "^2.2.1",
     "jest": "^23.6.0",
     "nodemon": "^1.18.9"
   },

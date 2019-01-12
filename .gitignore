@@ -9,3 +9,4 @@ yarn-error.log
 TODO
 coverage
 dist
+package-lock.json
