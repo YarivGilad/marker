@@ -1,6 +1,7 @@
 /**
  * @author Ajar <yariv.gilad@gmail.com> [https://timetocode.io, https://casaversa.com]
  * */
+const constants = require('./constants');
 const {
     Hidden,
     Reset,
@@ -12,7 +13,12 @@ const {
     Yellow,
     Magenta,
     Cyan,
-} = require('./constants');
+    BgCyan,
+    White,
+    Black
+} = constants;
+
+let max_chars = 60;
 
 /**
  * @returns { string } - filename of the script using the logger
@@ -23,14 +29,20 @@ function get_filename(){
     } catch (e) {
         const lines = e.stack.split('\n');
         let line = lines[4];
-        if(!line || (line && line.includes('internal/modules/cjs')) || (line.includes('<anonymous>'))) line = lines[3];
+        if(!line || 
+            (line && line.includes('internal/modules/cjs')) || 
+            (line.includes('<anonymous>')) ||
+            (line && line.includes('events.js'))) line = lines[3];
         if(!line) return '>>';
         const res = line.match(/([\w\d\-_.]*:\d+:\d+)/);
         if(!res) return '>>';
         const [info] = res;
         const [file , line_num] = info.split(':');
-         return `${file}[${line_num}]`
+         return `${file} >> ${line_num}`
     }
+}
+function is_server() {
+    return !(typeof window != 'undefined' && window.document && this == window);
 }
 /**
  * @param {string} color - one of the color hex constant values
@@ -39,7 +51,11 @@ function get_filename(){
 const log = color => (...args)=>  {
     const hide = args[0] === Hidden || args.length === 0;
     const colored_msg = hide ? args.splice(0,2)[1] : args.shift() ;
-    let text = [`${color}${get_filename()}${Reset}: ${Bold}${color}${colored_msg}${Reset}`, ...args].join(' ');
+    const user_text = [`${Bold}${color}${colored_msg}${Reset}`, ...args].join(' ');
+    if(user_text.length > max_chars) max_chars = user_text.length;
+    const pad = ' '.repeat(max_chars - user_text.length);
+    const stamp = `${BgCyan} ${Black}${get_filename()} ${Reset}` 
+    const text = `${user_text} ${pad} ${stamp}`;
     if(!hide){
         console.log(text);
     }
@@ -105,6 +121,7 @@ const marker = {
                 odd? log(NoColor)(line)  : log(Blue)(line) 
             }
             return {msg,stack}
-    }    
+    },
+    constants   
 }
 module.exports = marker;
