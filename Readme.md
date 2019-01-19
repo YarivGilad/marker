@@ -39,6 +39,14 @@ marker.info('hello','marker');
 
 ## Examples
 ```javascript
+//by levels  
+
+marker.verbose('verbose','is explicit');
+marker.debug('debug','is common');
+marker.info('info','is trivial');  
+marker.warn('warn','is important');  
+marker.err('err','is critical'); 
+
 //by levels shorthand
 
 marker.v('v','is short for verbose');    
@@ -46,14 +54,6 @@ marker.d('d','is short for debug');
 marker.i('i','is short for info');     
 marker.w('w','is short for warn');     
 marker.e('e','is short for err');  
-
-//by explicit levels  
-
-marker.verbose('verbose','is explicit');
-marker.debug('debug','is common');
-marker.info('info','is trivial');  
-marker.warn('warn','is important');  
-marker.err('err','is critical'); 
 
 //by color names
 

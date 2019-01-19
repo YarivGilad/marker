@@ -1,19 +1,19 @@
 const marker = require('./index');
 
-//by levels shorthand
-console.log('\n\nby levels shorthand\n')
-marker.v('v','is short for verbose');    
-marker.d('d','is short for debug');     
-marker.i('i','is short for info');     
-marker.w('w','is short for warn');     
-marker.e('e','is short for err');    
 //by explicit levels  
-console.log('\nby explicit levels\n') 
+console.log('\n\nby levels\n') 
 marker.verbose('verbose','is explicit');
 marker.debug('debug','is common');
 marker.info('info','is trivial');  
 marker.warn('warn','is important');  
 marker.err('err','is critical'); 
+//by levels shorthand
+console.log('\nby levels shorthand\n')
+marker.v('v','is short for verbose');    
+marker.d('d','is short for debug');     
+marker.i('i','is short for info');     
+marker.w('w','is short for warn');     
+marker.e('e','is short for err');    
 //by color names
 console.log('\nby color names\n')
 marker.blue('blue','ocean');       
