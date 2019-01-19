@@ -32,6 +32,7 @@ function get_filename(){
         if(!line || 
             (line && line.includes('internal/modules/cjs')) || 
             (line.includes('<anonymous>')) ||
+            (line.includes('_stream_writable.js')) ||
             (line && line.includes('events.js'))) line = lines[3];
         if(!line) return '>>';
         const res = line.match(/([\w\d\-_.]*:\d+:\d+)/);
