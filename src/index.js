@@ -18,7 +18,7 @@ const {
     Black
 } = constants;
 
-let max_chars = 60;
+let max_chars = 45;
 
 /**
  * @returns { string } - filename of the script using the logger
@@ -39,7 +39,7 @@ function get_filename(){
         if(!res) return '>>';
         const [info] = res;
         const [file , line_num] = info.split(':');
-         return `${file} >> ${line_num}`
+         return `${file}${Yellow} >> ${White}${line_num}`
     }
 }
 function is_server() {
@@ -49,13 +49,13 @@ function is_server() {
  * @param {string} color - one of the color hex constant values
  * @returns { Function } - args will be colored by the color you passed in.
  */
-const log = color => (...args)=>  {
+const log = (color,file_name) => (...args)=>  { 
     const hide = args[0] === Hidden || args.length === 0;
     const colored_msg = hide ? args.splice(0,2)[1] : args.shift() ;
     const user_text = [`${Bold}${color}${colored_msg}${Reset}`, ...args].join(' ');
     if(user_text.length > max_chars) max_chars = user_text.length;
     const pad = ' '.repeat(max_chars - user_text.length);
-    const stamp = `${BgCyan} ${Black}${get_filename()} ${Reset}` 
+    const stamp = `${Cyan}🖍  ${White}${file_name||get_filename()} ${Reset}` 
     const text = `${user_text} ${pad} ${stamp}`;
     if(!hide){
         console.log(text);
@@ -96,7 +96,8 @@ const marker = {
             if(Object(obj) !== obj){//verify value is an object
                 throw new Error('.obj() expects at least 1 object argument');
             }
-            const actual_label = log(Magenta)(label);
+            const file_name = get_filename();
+            const actual_label = log(Magenta,file_name)(label);
             console.dir(obj);
             return {actual_label}
     },
@@ -107,7 +108,8 @@ const marker = {
             if(toString.call(err) !== '[object Error]'){
                 throw new Error('.error() expects 1 Error argument');
             }
-            const msg = log(Red)('ERROR: ',err.message)
+            const file_name = get_filename();
+            const msg = log(Red,file_name)('ERROR: ',err.message);
             let odd = true;
             let stack = err.stack? err.stack.split('\n') : [];
             //exclude stack traces from node internals or node_modules
@@ -117,9 +119,9 @@ const marker = {
             for(let line of stack){
                 odd = !odd
                 //keep it short
-                line = line.substr(line.lastIndexOf('\\') - 50);
+                line = line.substr(line.lastIndexOf('\\') - 35);
                 //alternating row colors
-                odd? log(NoColor)(line)  : log(Blue)(line) 
+                odd? log(NoColor,file_name)(line)  : log(Blue,file_name)(line) 
             }
             return {msg,stack}
     },
