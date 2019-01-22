@@ -39,7 +39,7 @@ function get_filename(){
         if(!res) return '>>';
         const [info] = res;
         const [file , line_num] = info.split(':');
-         return `${file}${Yellow} >> ${White}${line_num}`
+         return `${file}${Cyan} > ${White}${line_num}`
     }
 }
 function is_server() {
@@ -55,7 +55,7 @@ const log = (color,file_name) => (...args)=>  {
     const user_text = [`${Bold}${color}${colored_msg}${Reset}`, ...args].join(' ');
     if(user_text.length > max_chars) max_chars = user_text.length;
     const pad = ' '.repeat(max_chars - user_text.length);
-    const stamp = `${Cyan}🖍  ${White}${file_name||get_filename()} ${Reset}` 
+    const stamp = `${Magenta}🖍  ${White}${file_name||get_filename()} ${Reset}` 
     const text = `${user_text} ${pad} ${stamp}`;
     if(!hide){
         console.log(text);
