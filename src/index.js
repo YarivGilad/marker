@@ -34,6 +34,7 @@ function get_filename(){
             (line.includes('<anonymous>')) ||
             (line.includes('_stream_writable.js')) ||
             (line.includes('next_tick.js')) ||
+            (line.includes('node_modules')) ||
             (line && line.includes('events.js'))) line = lines[3];
         if(!line) return '>>';
         const res = line.match(/([\w\d\-_.]*:\d+:\d+)/);
