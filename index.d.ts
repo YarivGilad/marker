@@ -36,7 +36,7 @@ interface Constants{
     BgWhite:string;
 }
 
-export interface Marker{
+interface Marker{
     //by levels shorthand
     n :         LogFunc,    
     v :         LogFunc,    
@@ -64,3 +64,4 @@ export interface Marker{
     error:      ErrorLogFunc;
     constants:  Constants;  
 }
+export default Marker;
