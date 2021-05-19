@@ -3,6 +3,7 @@
   "version": "1.2.3",
   "description": "A simple color logging utility for your node.js console.",
   "main": "src/index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "dev": "nodemon src/marker.draft.js",
     "start": "node src/marker.draft.js",
