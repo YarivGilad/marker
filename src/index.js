@@ -1,5 +1,5 @@
 /**
- * @author Ajar <yariv.gilad@gmail.com> [https://timetocode.io, https://casaversa.com]
+ * @author Ajar <yariv.gilad@gmail.com> [https://yarivgilad.com]
  * */
 const constants = require('./constants');
 const {
@@ -34,6 +34,7 @@ function get_filename(){
             (line.includes('<anonymous>')) ||
             (line.includes('_stream_writable.js')) ||
             (line.includes('next_tick.js')) ||
+            (line.includes('task_queues')) ||
             (line.includes('node_modules')) ||
             (line && line.includes('events.js'))) line = lines[3];
         if(!line) return '>>';
