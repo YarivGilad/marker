@@ -1,6 +1,6 @@
 {
   "name": "@ajar/marker",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "A simple color logging utility for your node.js console.",
   "main": "src/index.js",
   "types": "./index.d.ts",
