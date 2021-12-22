@@ -36,6 +36,7 @@ function get_filename(){
             (line.includes('next_tick.js')) ||
             (line.includes('task_queues')) ||
             (line.includes('node_modules')) ||
+            (line.includes('module_job')) ||
             (line && line.includes('events.js'))) line = lines[3];
         if(!line) return '>>';
         const res = line.match(/([\w\d\-_.]*:\d+:\d+)/);
