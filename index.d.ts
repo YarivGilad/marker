@@ -1,5 +1,5 @@
 declare module '@ajar/marker'{
-    
+    .
     type LogFunc = (...args: any[])=> string;
     type ErrorLogFunc = (err: Error)=> {msg:string,stack:string[]};
     interface Obj{
