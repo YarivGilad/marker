@@ -4,7 +4,7 @@
 [![jest](https://img.shields.io/bundlephobia/min/@ajar/marker.svg)](https://www.npmjs.com/package/@ajar/marker)
 
 
-# Marker 
+# Marker .
 A simple color logging utility for your node.js console.
 
 [![Marker](https://raw.githubusercontent.com/Ajar-Ajar/marker/master/marker.png)](https://www.npmjs.com/package/@ajar/marker)
